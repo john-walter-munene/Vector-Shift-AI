@@ -11,6 +11,13 @@ import { LLMNode } from './nodes/llmNode';
 import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
 
+// New nodes...
+import { APINode } from './nodes/apiNode';
+import { ConditionNode } from './nodes/conditionNode';
+import { DatabaseNode } from './nodes/databaseNode';
+import { MergeNode } from './nodes/mergeNode';
+import { ImageGeneratorNode } from './nodes/imageGeneratorNode';
+
 import 'reactflow/dist/style.css';
 
 const gridSize = 20;
@@ -20,6 +27,12 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+
+  api: APINode,
+  condition: ConditionNode,
+  database: DatabaseNode,
+  merge: MergeNode,
+  imageGenerator: ImageGeneratorNode,
 };
 
 const selector = (state) => ({

@@ -1,0 +1,29 @@
+.node {
+  width: 200px;
+  min-height: 80px;
+
+  border: 1px solid #3fd615;   /* EXACT match to old */
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+}
+
+/* Header (old nodes had none, so keep minimal) */
+.header {
+  font-size: 13px;
+  font-weight: 600;
+
+  padding: 4px 6px;
+}
+
+/* Content matches old free-form layout */
+.content {
+  padding: 6px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
