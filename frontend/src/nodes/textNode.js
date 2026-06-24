@@ -1,35 +1,21 @@
 // textNode.js
 
 import { useState } from 'react';
-import { Handle, Position } from 'reactflow';
+import { BaseNode } from './baseNode';
+import { extractVariables } from '../lib/extractor';
+import { computeTextHandles } from '../lib/computeHandles';
 
 export const TextNode = ({ id, data }) => {
   const [currText, setCurrText] = useState(data?.text || '{{input}}');
-
-  const handleTextChange = (e) => {
-    setCurrText(e.target.value);
-  };
+  const variables = extractVariables(currText);
+  const handles = computeTextHandles(id, variables);
 
   return (
-    <div style={{width: 200, height: 80, border: '1px solid black'}}>
-      <div>
-        <span>Text</span>
-      </div>
-      <div>
-        <label>
-          Text:
-          <input 
-            type="text" 
-            value={currText} 
-            onChange={handleTextChange} 
-          />
-        </label>
-      </div>
-      <Handle
-        type="source"
-        position={Position.Right}
-        id={`${id}-output`}
-      />
-    </div>
+    <BaseNode title="TextNode" handles={handles}>
+      <label>
+        Text:
+        <input value={currText} onChange={(e) => setCurrText(e.target.value)}/>
+      </label>
+    </BaseNode>
   );
-}
+};

@@ -1,10 +1,20 @@
 // submit.js
 
-export const SubmitButton = () => {
+import { useStore } from './store';
+import { parsePipeline } from './api/client';
 
-    return (
-        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <button type="submit">Submit</button>
-        </div>
-    );
-}
+export const SubmitButton = () => {
+  const { nodes, edges, alertOpen, showAlert } = useStore();
+  const handleSubmit = async () => {
+    const response = await parsePipeline(nodes, edges);
+    showAlert(response);
+  };
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <button type="button" disabled={alertOpen} onClick={handleSubmit} >
+        {alertOpen ? 'Viewing Results' : 'Submit'}
+      </button>
+    </div>
+  );
+};
