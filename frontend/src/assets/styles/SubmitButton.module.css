@@ -1,0 +1,40 @@
+.container{
+  display:flex;
+  justify-content:center;
+  padding:1rem;
+}
+
+
+.button{
+  width:100%;
+  padding:.9rem 1rem;
+  border:none;
+  border-radius:10px;
+  background:#2563EB;
+  color:white;
+  font-size:.95rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+
+.button:hover{
+  background:#1D4ED8;
+}
+
+
+.button:disabled{
+  background:#334155;
+  color:#94A3B8;
+  cursor:not-allowed;
+}
+
+
+@media (min-width:768px){
+
+  .button{
+    width:240px;
+  }
+
+}

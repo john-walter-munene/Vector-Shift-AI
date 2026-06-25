@@ -1,12 +1,15 @@
 // toolbar.js
 
 import { DraggableNode } from './draggableNode';
+import styles from './assets/styles/Toolbar.module.css';
 
 export const PipelineToolbar = () => {
 
   return (
-    <div style={{ padding: '10px' }}>
-      <div style={{ marginTop: '20px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+
+    <div className={styles["toolbar"]}>
+
+      <div className={styles["container"]}>
 
         <DraggableNode type='customInput' label='Input' />
         <DraggableNode type='llm' label='LLM' />
@@ -21,6 +24,9 @@ export const PipelineToolbar = () => {
         <DraggableNode type='imageGenerator' label='Image Gen' />
 
       </div>
+
     </div>
+
   );
+
 };

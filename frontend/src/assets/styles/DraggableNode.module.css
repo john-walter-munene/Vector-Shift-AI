@@ -1,0 +1,58 @@
+.node{
+  cursor:grab;
+  flex:1 1 calc(50% - .75rem);
+  min-height:42px;
+  padding:.6rem;
+  border-radius:10px;
+  border:1px solid #334155;
+  background:#1E293B;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transition:background .2s ease,border-color .2s ease,transform .2s ease;
+}
+
+
+.node:hover{
+  background:#273449;
+  border-color:#3B82F6;
+  transform:translateY(-2px);
+}
+
+
+.node:active{
+  cursor:grabbing;
+}
+
+
+.label{
+  color:#FFFFFF;
+  font-size:.8rem;
+  font-weight:500;
+  text-align:center;
+  line-height:1.2;
+}
+
+
+/* Tablet */
+@media(min-width:768px){
+
+  .node{
+    flex:1 1 calc(25% - .75rem);
+  }
+
+}
+
+
+/* Desktop */
+@media(min-width:1024px){
+
+  .node{
+    flex:0 0 auto;
+    min-width:82px;
+    padding:.55rem .9rem;
+  }
+
+}

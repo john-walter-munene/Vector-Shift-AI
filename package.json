@@ -1,0 +1,27 @@
+{
+  "name": "vector-shift-ai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "frontend": "npm start --prefix frontend",
+    "backend": "npm run dev --prefix backend",
+    "start": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-walter-munene/Vector-Shift-AI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/john-walter-munene/Vector-Shift-AI/issues"
+  },
+  "homepage": "https://github.com/john-walter-munene/Vector-Shift-AI#readme",
+  "dependencies": {
+    "concurrently": "^9.2.3"
+  }
+}

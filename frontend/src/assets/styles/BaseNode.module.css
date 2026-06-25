@@ -1,29 +1,67 @@
-.node {
-  width: 200px;
-  min-height: 80px;
-
-  border: 1px solid #3fd615;   /* EXACT match to old */
-  background-color: #fff;
-
-  display: flex;
-  flex-direction: column;
-
-  box-sizing: border-box;
+.node{
+  min-width:220px;
+  background:#1E293B;
+  border:1px solid #334155;
+  border-radius:12px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
 }
 
-/* Header (old nodes had none, so keep minimal) */
-.header {
-  font-size: 13px;
-  font-weight: 600;
 
-  padding: 4px 6px;
+.node:hover{
+  border-color:#3B82F6;
 }
 
-/* Content matches old free-form layout */
-.content {
-  padding: 6px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.header{
+  padding:.85rem 1rem;
+  background:#0F172A;
+  border-bottom:1px solid #334155;
+  color:#F8FAFC;
+  font-size:.9rem;
+  font-weight:600;
+}
+
+
+.content{
+  padding:1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+}
+
+
+.content label{
+  display:flex;
+  flex-direction:column;
+  gap:.35rem;
+  color:#CBD5E1;
+  font-size:.85rem;
+}
+
+
+.content input,
+.content select,
+.content textarea{
+  padding:.65rem .75rem;
+  border:none;
+  border-radius:8px;
+  outline:none;
+  background:#0F172A;
+  color:white;
+}
+
+
+.content input:focus,
+.content select:focus,
+.content textarea:focus{
+  box-shadow:0 0 0 2px rgba(59,130,246,.35);
+}
+
+
+@media (min-width:768px){
+  .node{
+    min-width:250px;
+  }
 }
